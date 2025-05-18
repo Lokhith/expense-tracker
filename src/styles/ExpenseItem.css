@@ -1,0 +1,40 @@
+/* src/styles/ExpenseItem.css */
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.expense-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.expense-date {
+  font-size: 0.9rem;
+  color: #777;
+  flex-basis: 20%;
+}
+
+.expense-details {
+  flex-basis: 75%;
+  text-align: right;
+}
+
+.expense-details h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.expense-details p {
+  margin: 0;
+  color: #007bff;
+  font-weight: bold;
+}
