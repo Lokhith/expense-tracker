@@ -1,34 +1,66 @@
-/* src/styles/Header.css */
+/* Header Styles */
 .header {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 1.2rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: #fff;
-  padding: 1rem 2rem;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
+.header-logo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0;
+  user-select: none;
+  transition: color 0.3s ease;
 }
 
-.nav-links {
-  list-style: none;
+.header-logo:hover {
+  color: #d9eaff;
+}
+
+.header-nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 2.4rem;
 }
 
-.nav-link {
-  color: #fff;
+.header-link {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
   text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+  padding-bottom: 0.25rem;
+  border-bottom: 2.5px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.nav-link:hover {
-  background-color: #555;
-  color: #ddd;
+.header-link:hover {
+  color: #d9eaff;
+  border-bottom-color: #d9eaff;
+}
+
+.header-link.active {
+  color: #ffeb3b;
+  border-bottom-color: #ffeb3b;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .header-logo {
+    font-size: 1.8rem;
+  }
+
+  .header-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

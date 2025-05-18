@@ -21,3 +21,13 @@ p {
 a {
   color: #007bff;
 }
+
+.filter-heading {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem 0;
+  color: #222;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

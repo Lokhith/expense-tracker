@@ -1,21 +1,61 @@
-/* src/styles/ExpenseList.css */
 .expense-list {
-  margin-bottom: 2rem;
-  padding: 0 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+.expense-item {
+  background-color: #fff;
+  margin-bottom: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.expense-item:hover {
+  box-shadow: 0 10px 35px rgba(0, 123, 255, 0.25);
+}
+
+.expense-details h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.expense-details p {
+  margin: 0.15rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.delete-btn {
+  background-color: #e55353;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 0.25rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.delete-btn:hover {
+  background-color: #b73232;
 }
 
 .no-expenses {
   text-align: center;
-  font-style: italic;
   color: #777;
-  padding: 2rem;
-  background-color: #f4f4f4;
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
-  transition: background-color 0.3s;
-}
-
-.no-expenses:hover {
-  background-color: #f9f9f9;
+  font-style: italic;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

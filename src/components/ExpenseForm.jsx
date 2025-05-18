@@ -1,4 +1,3 @@
-// src/components/ExpenseForm.jsx
 import React, { useState } from 'react';
 import '../styles/ExpenseForm.css';
 
@@ -7,22 +6,18 @@ const ExpenseForm = ({ onAddExpense }) => {
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
+    if (!title || !amount || !date) return;
 
-    if (!title || !amount || !date) {
-      alert('Please fill in all fields');
-      return;
-    }
-
-    const newExpense = {
+    const expense = {
       id: Date.now(),
       title,
       amount: parseFloat(amount),
-      date: new Date(date).toISOString().split('T')[0],
+      date,
     };
 
-    onAddExpense(newExpense);
+    onAddExpense(expense);
     setTitle('');
     setAmount('');
     setDate('');
@@ -31,35 +26,43 @@ const ExpenseForm = ({ onAddExpense }) => {
   return (
     <form className="expense-form" onSubmit={handleSubmit}>
       <div className="form-group">
-        <label>Title</label>
-        <input 
-          type="text" 
-          value={title} 
-          onChange={(e) => setTitle(e.target.value)} 
-          placeholder="Expense title" 
-        />
-      </div>
-      
-      <div className="form-group">
-        <label>Amount</label>
-        <input 
-          type="number" 
-          value={amount} 
-          onChange={(e) => setAmount(e.target.value)} 
-          placeholder="Expense amount" 
-        />
-      </div>
-      
-      <div className="form-group">
-        <label>Date</label>
-        <input 
-          type="date" 
-          value={date} 
-          onChange={(e) => setDate(e.target.value)} 
+        <label htmlFor="title">Title</label>
+        <input
+          id="title"
+          type="text"
+          placeholder="Expense title"
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          required
         />
       </div>
 
-      <button type="submit">Add Expense</button>
+      <div className="form-group">
+        <label htmlFor="amount">Amount (₹)</label>
+        <input
+          id="amount"
+          type="number"
+          placeholder="0.00"
+          value={amount}
+          onChange={e => setAmount(e.target.value)}
+          min="0"
+          step="0.01"
+          required
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="date">Date</label>
+        <input
+          id="date"
+          type="date"
+          value={date}
+          onChange={e => setDate(e.target.value)}
+          required
+        />
+      </div>
+
+      <button type="submit" className="submit-btn">Add Expense</button>
     </form>
   );
 };

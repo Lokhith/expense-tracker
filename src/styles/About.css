@@ -1,0 +1,23 @@
+.about-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  background-color: #f0f6ff;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #10375c;
+  line-height: 1.6;
+}
+
+.about-container h2 {
+  margin-bottom: 1.2rem;
+  color: #0056b3;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.about-container p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}

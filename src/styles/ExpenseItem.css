@@ -1,71 +1,60 @@
 /* src/styles/ExpenseItem.css */
+
 .expense-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-  padding: 1rem 2rem;
-  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-  cursor: pointer;
-  position: relative;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: default;
 }
 
 .expense-item:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   transform: translateY(-4px);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
-  background-color: #f9f9f9;
+}
+
+.expense-info h3 {
+  font-size: 1.4rem;
+  color: #222;
+  margin: 0 0 0.3rem 0;
 }
 
 .expense-date {
   font-size: 0.9rem;
   color: #777;
-  flex-basis: 20%;
-  font-weight: 600;
+  font-style: italic;
 }
 
-.expense-details {
-  flex-basis: 70%;
+.expense-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.expense-amount {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #007bff;
+  min-width: 100px;
   text-align: right;
 }
 
-.expense-details h3 {
-  margin: 0;
-  font-size: 1.4rem;
-  color: #333;
-  transition: color 0.3s;
-}
-
-.expense-details h3:hover {
-  color: #007bff;
-}
-
-.expense-details p {
-  margin: 0;
-  color: #007bff;
-  font-weight: bold;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-
-.expense-details p:hover {
-  color: #0056b3;
-}
-
-.delete-button {
-  background-color: #ff4d4d;
-  color: #fff;
+.delete-btn {
+  background: transparent;
   border: none;
-  padding: 0.5rem;
-  border-radius: 50%;
+  color: #ff4d4f;
+  font-size: 1.8rem;
   cursor: pointer;
-  transition: background-color 0.3s;
-  position: absolute;
-  right: 20px;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.3s ease;
 }
 
-.delete-button:hover {
-  background-color: #ff0000;
+.delete-btn:hover {
+  color: #d9363e;
+  transform: scale(1.3);
 }

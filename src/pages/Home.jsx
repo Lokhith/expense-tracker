@@ -6,7 +6,8 @@ import '../styles/Home.css';
 
 const Home = () => {
   const [expenses, setExpenses] = useState([]);
-  const [filter, setFilter] = useState('');
+  const [titleFilter, setTitleFilter] = useState('');
+  const [dateFilter, setDateFilter] = useState('');
 
   const handleAddExpense = (expense) => {
     setExpenses([expense, ...expenses]);
@@ -17,9 +18,12 @@ const Home = () => {
     setExpenses(updatedExpenses);
   };
 
-  const filteredExpenses = expenses.filter(expense =>
-    expense.title.toLowerCase().includes(filter.toLowerCase())
-  );
+  // Apply both title and date filters
+  const filteredExpenses = expenses.filter(expense => {
+    const matchesTitle = expense.title.toLowerCase().includes(titleFilter.toLowerCase());
+    const matchesDate = !dateFilter || expense.date === dateFilter;
+    return matchesTitle && matchesDate;
+  });
 
   const totalExpense = filteredExpenses.reduce((sum, expense) => sum + expense.amount, 0);
 
@@ -31,9 +35,16 @@ const Home = () => {
       <input 
         type="text" 
         placeholder="Filter by title" 
-        value={filter} 
-        onChange={(e) => setFilter(e.target.value)} 
+        value={titleFilter} 
+        onChange={(e) => setTitleFilter(e.target.value)} 
         className="filter-input"
+      />
+
+      <input 
+        type="date" 
+        value={dateFilter} 
+        onChange={(e) => setDateFilter(e.target.value)} 
+        className="date-filter-input"
       />
 
       <ExpenseForm onAddExpense={handleAddExpense} />

@@ -1,15 +1,19 @@
 /* src/styles/Home.css */
 .home-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 3rem 1rem;
   text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
 }
 
 .home-container h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: #333;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
   transition: color 0.3s;
 }
 
@@ -24,28 +28,52 @@
   font-style: italic;
 }
 
-.filter-input {
+.filter-input,
+.date-filter-input {
   width: 100%;
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   border: 1px solid #ddd;
   border-radius: 10px;
   font-size: 1rem;
   outline: none;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, background-color 0.3s;
+  background-color: #ffffff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
-.filter-input:focus {
+.filter-input:focus,
+.date-filter-input:focus {
   border-color: #007bff;
+  background-color: #f4f4f4;
 }
 
 .total-expense {
-  background-color: #f4f4f4;
+  background-color: #007bff;
   padding: 1.5rem;
   border-radius: 12px;
   margin-top: 2rem;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-  color: #333;
+  color: #ffffff;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  letter-spacing: -0.5px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.total-expense:hover {
+  background-color: #0056b3;
+  transform: translateY(-5px);
+}
+
+/* src/styles/TotalExpense.css or your global CSS */
+
+.total-expense {
+  font-size: 1.8rem;  /* Reduced from very large size */
+  font-weight: 700;
+  color: #007bff;
+  text-align: center;
+  margin-top: 2rem;
+  letter-spacing: 0.03em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
