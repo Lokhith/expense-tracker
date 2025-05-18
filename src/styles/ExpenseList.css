@@ -1,6 +1,7 @@
 /* src/styles/ExpenseList.css */
 .expense-list {
   margin-bottom: 2rem;
+  padding: 0 2rem;
 }
 
 .no-expenses {
@@ -10,5 +11,11 @@
   padding: 2rem;
   background-color: #f4f4f4;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  transition: background-color 0.3s;
+}
+
+.no-expenses:hover {
+  background-color: #f9f9f9;
 }
